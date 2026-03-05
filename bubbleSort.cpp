@@ -5,8 +5,8 @@ using namespace std;
 int arr[20]; //Deklarasi variable global array a dengan ukuran 20
 int n; //Deklarasi variable global n untuk menyimpan banyaknya elemen
 
-void input (){ //procedur untuk 
-    while (true){
+void input () { //procedur untuk 
+    while (true) {
         cout << "Masukkan banyaknya elemen pada array : "; 
         cin >> n;     //Input dari pengguna
         if (n <= 20)  // Jika n kurang dari atau sama dengan 20
@@ -20,7 +20,33 @@ void input (){ //procedur untuk
     cout << "Masukkan Elemen Array" << endl;
     cout << "=====================" << endl;
 
-    for (int i = 0; i < n; i++)  //looping i dimulai dari 0
+    for (int i = 0; i < n; i++) { //looping i dimulai dari 0
         cout << "Data ke-" << (1+1) << ": "; //  Output ke Layar
-        
+        cin >> arr[i];
+    }
+}
+
+void bubbleSortArray() {  
+    int pass = 1; //step 1
+
+    do {
+        for (int j = 0; j <= n - 1 - pass; j++) { // step 2
+            if (arr[j] > arr[j + 1]) { //step 3
+                int temp;
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+
+        }
+        pass = pass + 1;  // step 4
+
+        cout << "\nPass " << pass - 1 << ": "; //number of pass
+        for (int k = 0; k < n; k++) {
+            cout << arr[k] << " ";     //menampilkan data pada number of pass
+  
+        }
+        cout << endl;
+
+    } while (pass <= n - 1); //step 5
 }
