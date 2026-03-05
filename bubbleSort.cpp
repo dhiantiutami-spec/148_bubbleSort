@@ -21,7 +21,7 @@ void input () { //procedur untuk
     cout << "=====================" << endl;
 
     for (int i = 0; i < n; i++) { //looping i dimulai dari 0
-        cout << "Data ke-" << (1+1) << ": "; //  Output ke Layar
+        cout << "Data ke-" << (i+1) << ": "; //  Output ke Layar
         cin >> arr[i];
     }
 }
